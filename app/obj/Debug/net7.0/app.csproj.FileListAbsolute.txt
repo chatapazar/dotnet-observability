@@ -40,3 +40,5 @@
 /Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Serilog.dll
+/Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Serilog.Sinks.Console.dll

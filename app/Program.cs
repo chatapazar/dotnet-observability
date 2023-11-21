@@ -1,5 +1,10 @@
 using Prometheus;
 using Sample.Web;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateLogger();
 
 // This sample demonstrates how to integrate prometheus-net into a web app.
 // 

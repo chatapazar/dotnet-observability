@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Prometheus;
+using Serilog;
 
 namespace Superhero.Controllers;
 
@@ -14,17 +15,18 @@ public class WeatherForecastController : ControllerBase
 
     private static readonly Counter WeatherForeCastCount = Metrics.CreateCounter("weatherforecast_total", "Number of WeatherForecast has ever executed.");
 
-    private readonly ILogger<WeatherForecastController> _logger;
+    //private readonly ILogger<WeatherForecastController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    
+    public WeatherForecastController()
     {
-        _logger = logger;
+        
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
-        _logger.LogInformation("GetWeatherForecast" + DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.ffffffK"));
+        Log.Information("GetWeatherForecast : " + DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.ffffffK"));
         WeatherForeCastCount.Inc();
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
