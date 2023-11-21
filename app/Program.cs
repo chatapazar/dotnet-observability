@@ -6,6 +6,7 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateLogger();
 
+
 // This sample demonstrates how to integrate prometheus-net into a web app.
 // 
 // NuGet packages required:
@@ -35,6 +36,7 @@ builder.Services.AddHealthChecks()
     .AddCheck<SampleHealthCheck>(nameof(SampleHealthCheck))
     // Report health check results in the metrics output.
     .ForwardToPrometheus();
+
 
 var app = builder.Build();
 
@@ -82,5 +84,7 @@ app.UseEndpoints(endpoints =>
     // * custom business logic metrics published by the SampleService class
     endpoints.MapMetrics();
 });
+
+
 
 app.Run();
