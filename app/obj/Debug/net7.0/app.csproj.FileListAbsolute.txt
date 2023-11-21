@@ -35,3 +35,8 @@
 /Users/ckongman/work/workspace/dotnet-observability/app/obj/Debug/net7.0/app.MvcApplicationPartsAssemblyInfo.cs
 /Users/ckongman/work/workspace/dotnet-observability/app/obj/Debug/net7.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css
 /Users/ckongman/work/workspace/dotnet-observability/app/obj/Debug/net7.0/app.csproj.CopyComplete
+/Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Microsoft.OpenApi.dll
+/Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/ckongman/work/workspace/dotnet-observability/app/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll

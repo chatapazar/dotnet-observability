@@ -9,16 +9,21 @@ using Sample.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddRazorPages();
 
 // Define an HTTP client that reports metrics about its usage, to be used by a sample background service.
-builder.Services.AddHttpClient(SampleService.HttpClientName);
+//builder.Services.AddHttpClient(SampleService.HttpClientName);
 
 // Export metrics from all HTTP clients registered in services
 builder.Services.UseHttpClientMetrics();
 
 // A sample service that uses the above HTTP client.
-builder.Services.AddHostedService<SampleService>();
+//builder.Services.AddHostedService<SampleService>();
 
 builder.Services.AddHealthChecks()
     // Define a sample health check that always signals healthy state.
@@ -32,6 +37,18 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.MapControllers();
+
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -42,6 +59,8 @@ app.UseHttpMetrics();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.MapHealthChecks("/healthz");
 
 app.UseEndpoints(endpoints =>
 {

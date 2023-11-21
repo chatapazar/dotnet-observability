@@ -8,5 +8,6 @@ public sealed class SampleHealthCheck : IHealthCheck
     {
         // All is well!
         return Task.FromResult(HealthCheckResult.Healthy());
+        //return Task.FromResult(new HealthCheckResult(context.Registration.FailureStatus, "An unhealthy result."));
     }
 }
