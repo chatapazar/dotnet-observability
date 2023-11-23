@@ -65,26 +65,12 @@ app.UseHttpMetrics();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+//app.MapRazorPages();
+app.MapGet("/", () => "Hello World!");
 
 app.MapHealthChecks("/healthz");
 
-app.UseEndpoints(endpoints =>
-{
-    // Enable the /metrics page to export Prometheus metrics.
-    // Open http://localhost:5099/metrics to see the metrics.
-    //
-    // Metrics published in this sample:
-    // * built-in process metrics giving basic information about the .NET runtime (enabled by default)
-    // * metrics from .NET Event Counters (enabled by default, updated every 10 seconds)
-    // * metrics from .NET Meters (enabled by default)
-    // * metrics about requests made by registered HTTP clients used in SampleService (configured above)
-    // * metrics about requests handled by the web app (configured above)
-    // * ASP.NET health check statuses (configured above)
-    // * custom business logic metrics published by the SampleService class
-    endpoints.MapMetrics();
-});
-
+app.MapMetrics();
 
 
 app.Run();
